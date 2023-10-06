@@ -18,7 +18,59 @@
         
         ]);
 
-     </script>
-    
+        document.write(frutas.get("Manzanas")); //me devuelve el valor de manzanas, es decir, 500
+        document.write(frutas.get("bananas"));
+
+        //otra forma de hacer un map
+
+        const frutas2 =new Map();
+        frutas2.set("Manzanas",500);
+        frutas2.set("Platanos", 300);
+        frutas2.set("naranjas", 200);
+
+        document.write(frutas2.get("Manzanas"));
+
+        let tamano=frutas2.size; //devuelve el tamaño del mapa, en este caso sería 3
+        frutas2.delete("Platanos"); //elimina los platanos
+        console.log(frutas2.has("Manzanas")); //devuelve verdadero o falso, en este caso verdadero porque Manzanas esta en frutas2
+
+        let text="";
+
+        frutas.forEach(function(value,key){
+            text+=key+" = "+value+"<br>"
+        })
+        document.write(text);
+
+        text="";
+        for(const x of frutas.keys()){
+            text+=x+"<br>";
+        }
+        document.write(text); //devuelve las keys 
+
+        text="";
+        for(const x of frutas.values()){
+            text+=x+"<br>"
+        }
+        document.write(text);// devuelve los valores
+
+        //Creamos los objetos
+
+        const apples={name:"Manzanas"};
+        const bananna={name:"Bananna"};
+        const orange={name:"Naranjas"};
+
+        //añadimos los objetos al map
+
+        const frutas3=new Map();
+        frutas3.set(apples,500);
+        frutas3.set(bananna,350);
+        frutas3.set(orange,1234);
+
+        document.write(frutas3.get(apples));
+
+        frutas3.clear; //borra todo lo que hay en frutas 3
+
+
+     </script>  
 </body>
 </html>

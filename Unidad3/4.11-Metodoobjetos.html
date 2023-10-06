@@ -36,6 +36,25 @@
         let nuevo_coche=new coche("seat","ibiza","1998");
         nuevo_coche.imprimedatos();
 
+        const lenguajes=new Array ('Css','Javascript','HTML','PHP');
+        const frameworks=new Array ('React','Vue','Angular');
+        const tecnologia=lenguajes.concat(frameworks); //concatenamos los 2 arrays
+        let miArray1=lenguajes.join(",");//divide el array lenguajes en comas
+
+        //Declarar una funcion felcha a la que acepte como argumento un array de numeros y devuelva la suma de todos ellos en un document.write
+
+        const sumaNumeros = (numeros) => {
+                let suma = 0;
+                for (let i = 0; i < numeros.length; i++) {
+                    suma += numeros[i];
+                }
+                return suma;
+            };
+
+            const numeros = [1, 2, 3, 4, 5];
+            const resultado = sumaNumeros(numeros);
+
+            document.write(`La suma de los números es: ${resultado}`);
 
     </script>
 
