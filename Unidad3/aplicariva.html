@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script type="text/javascript">
+        //Funcion que se llame aplicariva, que calcule el iva del dato introducido por el usuario
+
+        
+
+        function aplicarIva (numero){
+            var numero = prompt("Dime el numero");
+
+            let iva=0.21;
+            let totalConIVA = numero - (numero*iva);
+            
+            console.log("El IVA es "+iva+", y el precio con iva es "+totalConIVA);
+        }
+        
+        let result = aplicarIva();
+        console.log(result);
+
+    </script>
+
+    
+</body>
+</html>
