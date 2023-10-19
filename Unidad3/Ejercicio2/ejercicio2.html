@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Personas Ordenadas por Nombre</h1>
+    <ul id="personas-list"></ul>
+
+    <script type="text/javascript">
+        class Persona {
+            constructor(nombre, apellido, ciudad, edad, educacion, trabaja) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.ciudad = ciudad;
+                this.edad = edad;
+                this.educacion = educacion;
+                this.trabaja = trabaja;
+            }
+        }
+
+        var persona1 = new Persona("Juan", "Perez", "Sevilla", 30, "Magisterio", false);
+        var persona2 = new Persona("Maria", "Gomez", "Madrid", 25, "Literatura", false);
+        var persona3 = new Persona("Carlos", "Lopez", "Valencia", 40, "Ingenieria", true);
+        var persona4 = new Persona("Ana", "Rodriguez", "Barcelona", 28, "Economia", true);
+
+        var personas = [persona1, persona2, persona3, persona4];
+
+        personas.sort((a, b) => {
+            const nombreA = a.nombre.toLowerCase();
+            const nombreB = b.nombre.toLowerCase();
+            
+            if (nombreA < nombreB) {
+                return -1;
+            }
+            if (nombreA > nombreB) {
+                return 1;
+            }
+            return 0;
+        });
+
+        var personasList = document.getElementById("personas-list");
+
+        personas.forEach(persona => {
+            var listItem = document.createElement("li");
+            listItem.textContent = `${persona.nombre} ${persona.apellido}, ${persona.ciudad}, ${persona.edad}, ${persona.educacion}`;
+            personasList.appendChild(listItem);
+        });
+    </script>
+    
+</body>
+</html>

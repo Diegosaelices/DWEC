@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parrafo">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsum asperiores rerum possimus recusandae.
+        Nemo, est maiores odio eos voluptatibus tempora unde commodi optio quasi porro nobis dicta numquam repudiandae.
+        Reprehenderit neque dicta odit fuga! Voluptatibus fugit numquam, adipisci sequi beatae consequuntur commodi
+        maiores iure iste sit perferendis quasi natus.
+    </div>
+    <div class="parrafo">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsum asperiores rerum possimus recusandae.
+        Nemo, est maiores odio eos voluptatibus tempora unde commodi optio quasi porro nobis dicta numquam repudiandae.
+        Reprehenderit neque dicta odit fuga! Voluptatibus fugit numquam, adipisci sequi beatae consequuntur commodi
+        maiores iure iste sit perferendis quasi natus.
+    </div>
+    <div class="parrafo">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsum asperiores rerum possimus recusandae.
+        Nemo, est maiores odio eos voluptatibus tempora unde commodi optio quasi porro nobis dicta numquam repudiandae.
+        Reprehenderit neque dicta odit fuga! Voluptatibus fugit numquam, adipisci sequi beatae consequuntur commodi
+        maiores iure iste sit perferendis quasi natus.
+    </div>
+    <div class="parrafo">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsum asperiores rerum possimus recusandae.
+        Nemo, est maiores odio eos voluptatibus tempora unde commodi optio quasi porro nobis dicta numquam repudiandae.
+        Reprehenderit neque dicta odit fuga! Voluptatibus fugit numquam, adipisci sequi beatae consequuntur commodi
+        maiores iure iste sit perferendis quasi natus.
+    </div>
+    <div class="parrafo">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsum asperiores rerum possimus recusandae.
+        Nemo, est maiores odio eos voluptatibus tempora unde commodi optio quasi porro nobis dicta numquam repudiandae.
+        Reprehenderit neque dicta odit fuga! Voluptatibus fugit numquam, adipisci sequi beatae consequuntur commodi
+        maiores iure iste sit perferendis quasi natus.
+    </div>
+    <script>
+        
+        //Asignamos el manejador de eventos a varios elementos del DOM
+        const divs=document.querySelectorAll(".parrafo");
+
+        const aleatorios = max=>{
+            return Math.round(Math.random()*max);
+        }
+
+        const cambiacolor=function(e){
+            const color = new Array (aleatorios(255), aleatorios(255), aleatorios(255));
+            e.target.style.backgroundColor=`rgb(${color[0]},${color[1]},${color[2]})`;
+        }
+
+        divs.forEach(div => {
+                div.addEventListener("mouseover", cambiacolor);
+            })
+
+    </script>
+
+</body>
+
+</html>

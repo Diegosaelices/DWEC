@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Personas</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Ciudad</th>
+                <th>Edad</th>
+                <th>Educación</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+
+    <script>
+        class Persona {
+            constructor(nombre, apellido, ciudad, edad, educacion, trabaja) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.ciudad = ciudad;
+                this.edad = edad;
+                this.educacion = educacion;
+                this.trabaja = trabaja;
+            }
+        }
+
+        var persona1 = new Persona("Juan", "Perez", "Sevilla", 30, "Magisterio", false);
+        var persona2 = new Persona("Maria", "Gomez", "Madrid", 25, "Literatura", false);
+        var persona3 = new Persona("Carlos", "Lopez", "Valencia", 40, "Ingenieria", true);
+        var persona4 = new Persona("Ana", "Rodriguez", "Barcelona", 28, "Economia", true);
+
+        var personas = [persona1, persona2, persona3, persona4];
+
+        var dniMap = new Map([
+            [persona1, 1128349],
+            [persona2, 2384942],
+            [persona3, 3947522],
+            [persona4, 4490093]
+        ]);
+
+
+        const tableBody = document.getElementById("table-body");
+        const tbodyContent = [];
+
+        for (const [persona, dni] of dniMap) {
+            tbodyContent.push(`
+                <tr>
+                    <td>${dni}</td>
+                    <td>${persona.nombre}</td>
+                    <td>${persona.apellido}</td>
+                    <td>${persona.ciudad}</td>
+                    <td>${persona.edad}</td>
+                    <td>${persona.educacion}</td>
+                </tr>
+            `);
+        }
+        tableBody.innerHTML = tbodyContent.join('');
+    </script>
+</body>
+</html>
