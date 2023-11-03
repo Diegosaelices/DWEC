@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Párrafo 1</p>
+    <p>Párrafo 2</p>
+    <p>Párrafo 3</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", e=>{
+            console.log(document);
+
+            //acceder al elemento raiz de la pagina
+            const objHTML=document.documentElement;
+
+            //el primer hijo de dicho objeto seria el HEAD
+            const objHEAD=objHTML.firstChild;
+
+            //el ultimo objeto seria el body;
+            const objBODY=objHTML.lastChild;
+
+            const hijosHEAD=objHEAD.childNodes;
+            const numHijosHEAD=objHEAD.childNodes.length;
+
+            console.log(objHTML);
+            console.log(hijosHEAD);
+            console.log(numHijosHEAD);
+
+            const numHijosBODY=objBODY.childNodes.length;
+            const hijosBODY=objBODY.childNodes;
+
+            console.log(hijosBODY);
+            console.log(numHijosBODY);
+
+            const primerHijoBODY= objBODY.firstChild;
+            const cuartoHijoBODY=objBODY.childNodes[3];
+            
+            console.log(primerHijoBODY);
+            console.log(cuartoHijoBODY);
+
+            //podemos accedert al padre de un elemento
+            const padre=cuartoHijoBODY.parentNode;
+
+            console.log(padre);
+
+            //devuelve el tipo de nodod segun lo definido en las constantes
+
+            console.log(document.nodeType); //9
+            console.log(objHTML.nodeType); //1
+            console.log(objBODY.nodeType); //1
+            console.log(primerHijoBODY.nodeType);//3
+            console.log(cuartoHijoBODY.nodeType); //1
+
+            const parrafos=objBody.getElementsByTagName("p");
+            console.log(parrafos);
+            console.log(parrafos[1]);
+            parrafos[1].style.backgroundColor="green";
+        });
+    </script>
+</body>
+</html>

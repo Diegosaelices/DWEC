@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>DOM básico y atributos XHTML</title>
+</head>
+<body>
+    <!-- Contenido 1 -->
+    <p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+        libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
+        posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
+        porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+        faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
+        posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+    <!-- Enlace 1 para ocultar/mostrar Contenido 1 -->
+    <a id="enlace_1" href="#">Ocultar contenidos</a>
+    <br />
+    <!-- Contenido 2 -->
+    <p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+        libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
+        posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
+        porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+        faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
+        posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+    <!-- Enlace 2 para ocultar/mostrar Contenido 2 -->
+    <a id="enlace_2" href="#">Ocultar contenidos</a>
+    <br />
+    <!-- Contenido 3 -->
+    <p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+        libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
+        posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
+        porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+        faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
+        posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+    <!-- Enlace 3 para ocultar/mostrar Contenido 3 -->
+    <a id="enlace_3" href="#">Ocultar contenidos</a>
+
+    <script>
+        // Función para mostrar u ocultar el contenido
+        function muestraOculta(id) {
+            var elemento = document.getElementById('contenidos_' + id);
+            var enlace = document.getElementById('enlace_' + id);
+
+            // Verifica si el contenido está oculto o visible y realiza cambios en consecuencia
+            if (elemento.style.display === 'none' || elemento.style.display === '') {
+                elemento.style.display = 'block'; // Muestra el contenido
+                enlace.textContent = 'Ocultar contenidos'; // Cambia el texto del enlace
+            } else {
+                elemento.style.display = 'none'; // Oculta el contenido
+                enlace.textContent = 'Mostrar contenidos'; // Cambia el texto del enlace
+            }
+        }
+
+        // Asigna la función muestraOculta a los enlaces
+        document.getElementById('enlace_1').addEventListener('click', function () {
+            muestraOculta(1);
+        });
+
+        document.getElementById('enlace_2').addEventListener('click', function () {
+            muestraOculta(2);
+        });
+
+        document.getElementById('enlace_3').addEventListener('click', function () {
+            muestraOculta(3);
+        });
+    </script>
+</body>
+</html>
