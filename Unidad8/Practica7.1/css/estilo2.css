@@ -1,0 +1,84 @@
+body{
+    background: linear-gradient(to right, #0dff00, #0a4c04);;
+}
+
+nav{
+    background-color: white;
+    justify-content: left;
+    border-radius: 1rem;
+    border: 3px solid white;
+    display: flex;
+    column-gap: 10rem;
+}
+
+img {
+    width: 90px; 
+    height: auto; 
+    display: flex;
+}
+
+.menu1, .menu2{
+    color: black;
+    margin: 2rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+}
+
+.menu1:hover, .menu2:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #30b300; 
+}
+
+#mostrar, #mostrar1, #mostrar2, #mostrar3{
+    display: none;
+}
+
+.container, .container1{
+    margin: 6vh;
+    background-color: white;
+    justify-content: center;
+}
+
+table{
+    border-spacing: 6vh;
+}
+
+th{
+    width: 70vh;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+#tableBody_Users, #tableBody_POST, #tableBody_UserPost{
+    text-align: center;
+}
+
+#leermas{
+    background-color: #0dff00;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 2rem;
+    margin-left: 50rem;
+    color: #000000;
+}
+
+#leermas:hover{
+    background-color: #30b300;
+    text-decoration: underline;
+}
+
+#tablapost{
+    width: 100rem;
+    margin: auto;
+    border-spacing: 6rem;
+}
+
+#post{
+    padding: 2rem;
+    text-align: center;
+}

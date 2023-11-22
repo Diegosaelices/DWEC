@@ -35,9 +35,3 @@ async function hacerLogin(){
         window.open("blog.html")
       }
 }
-
-
-
-
-
-
